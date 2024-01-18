@@ -1,13 +1,14 @@
-import Comic from "./Comic"
+import Comic from "./Comic";
 
-function ComicsContainer() {
+function ComicsContainer({ comics }) {
+  const comicBooks = comics.map((comic) => (
+    <Comic
+      key={comic.id}
+      {...comic}
+    />
+  ));
 
-  return (
-    <>
-      <Comic />
-    </>
-  )
-
+  return <>{comicBooks}</>;
 }
 
-export default ComicsContainer
+export default ComicsContainer;
