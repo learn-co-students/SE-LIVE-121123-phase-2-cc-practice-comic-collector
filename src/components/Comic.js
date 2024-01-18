@@ -1,21 +1,51 @@
-import { useState } from 'react'
+import { useState } from "react";
 
 function Comic({ id, image_url, issue, title }) {
+  const [isShowCover, setIsShowCover] = useState(true);
+
+  const toggleCover = () => setIsShowCover((isShowCover) => !isShowCover);
+
+  // const cover = (
+  //   <img
+  //     onClick={toggleCover}
+  //     src={image_url}
+  //     alt={`Cover for ${title}`}
+  //   />
+  // );
+
+  // const back = (
+  //   <>
+  //     <h3 onClick={toggleCover}>{title}</h3>
+  //     <h4>{`Issue No. ${issue}`}</h4>
+  //     <button>Remove</button>
+  //   </>
+  // );
+
+  // let viewable;
+  // if (isShowCover){
+  //   viewable = cover
+  // } else {
+  //   viewable = back
+  // }
 
   return (
     <div className="comic-item">
-
-      {/* The image should render if the details aren't displayed */}
-      <img src={image_url} alt={`Cover for ${title}`} />
-
-      {/* The details should render if the image isn't displayed */}
-      <h3>{title}</h3>
-      <h4>{`Issue No. ${issue}`}</h4>
-      <button>Remove</button>
-
+      {/* {viewable} */}
+      {isShowCover ? (
+        <img
+          onClick={toggleCover}
+          src={image_url}
+          alt={`Cover for ${title}`}
+        />
+      ) : (
+        <>
+          <h3 onClick={toggleCover}>{title}</h3>
+          <h4>{`Issue No. ${issue}`}</h4>
+          <button>Remove</button>
+        </>
+      )}
     </div>
-  )
-
+  );
 }
 
-export default Comic
+export default Comic;
