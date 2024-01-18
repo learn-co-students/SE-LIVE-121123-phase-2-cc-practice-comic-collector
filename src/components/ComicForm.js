@@ -1,21 +1,56 @@
-function ComicForm() {
+import { useState } from 'react'
+
+const initialState ={
+  image_url: "",
+  title: "",
+  issue: "",
+  description: ""
+}
+
+function ComicForm({ onSubmitComic }) {
+
+  const [formData, setFormData] = useState(initialState)
+
+  function handleChange(e){
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  function handleSubmit(e){
+    e.preventDefault()
+    const config = {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    }
+    fetch("http://localhost:8004/comics", config)
+      .then(response => response.json())
+      .then(onSubmitComic)
+    setFormData(initialState)
+  }
+
+
   return (
 
-    <form className="comic-form">
+    <form onSubmit={handleSubmit} className="comic-form">
 
       <h2>Add A New Issue</h2>
 
       <label htmlFor="image_url">Image URL: </label>
-      <input name="image_url" />
+      <input onChange={handleChange} value={formData.image_url} type="text"name="image_url" />
 
       <label htmlFor="title">Title: </label>
-      <input name="title" />
+      <input onChange={handleChange} value={formData.title} name="title" />
 
       <label htmlFor="issue">Issue Number: </label>
-      <input name="issue" type="number" />
+      <input onChange={handleChange} value={formData.issue} name="issue" type="number" />
 
       <label htmlFor="description">Description: </label>
-      <input name="description" />
+      <input onChange={handleChange} value={formData.description} name="description" />
 
       <input type="submit" value="Add Issue" />
 
