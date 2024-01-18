@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Comic({ id, image_url, issue, title }) {
+function Comic({ id, image_url, issue, title, onDeleteComic }) {
   const [isShowCover, setIsShowCover] = useState(true);
 
   const toggleCover = () => setIsShowCover((isShowCover) => !isShowCover);
@@ -28,6 +28,11 @@ function Comic({ id, image_url, issue, title }) {
   //   viewable = back
   // }
 
+  const handleDelete = () => {
+    fetch(`http://localhost:8004/comics/${id}`, { method: 'DELETE'})
+    onDeleteComic(id)
+  }
+
   return (
     <div className="comic-item">
       {/* {viewable} */}
@@ -41,7 +46,7 @@ function Comic({ id, image_url, issue, title }) {
         <>
           <h3 onClick={toggleCover}>{title}</h3>
           <h4>{`Issue No. ${issue}`}</h4>
-          <button>Remove</button>
+          <button onClick={handleDelete}>Remove</button>
         </>
       )}
     </div>

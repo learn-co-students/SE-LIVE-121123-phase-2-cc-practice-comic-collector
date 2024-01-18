@@ -1,10 +1,11 @@
 import Comic from "./Comic";
 
-function ComicsContainer({ comics }) {
+function ComicsContainer({ comics, onDeleteComic }) {
   const comicBooks = comics.map((comic) => (
     <Comic
       key={comic.id}
       {...comic}
+      onDeleteComic={onDeleteComic}
     />
   ));
 
