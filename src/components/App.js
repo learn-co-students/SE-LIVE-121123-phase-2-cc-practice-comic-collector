@@ -42,6 +42,7 @@ function App() {
             comics={comics}
             onDeleteComic={removeComic}
             onSelectComic={findSelectedComic}
+            onFav={updateComic}
           />
         </div>
 

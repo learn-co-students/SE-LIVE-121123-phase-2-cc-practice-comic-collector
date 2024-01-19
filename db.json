@@ -5,7 +5,8 @@
       "title": "The Incredible Hulk",
       "issue": "3",
       "image_url": "https://i.annihil.us/u/prod/marvel/i/mg/9/a0/59933ea5b5c2e/clean.jpg",
-      "description": "Don't get'em mad!"
+      "description": "Don't get'em mad!",
+      "favorite": true
     },
     {
       "id": 2,
@@ -17,7 +18,8 @@
       "id": 3,
       "title": "The Amazing Spiderman",
       "issue": "300",
-      "image_url": "https://images-na.ssl-images-amazon.com/images/I/A1Hqli+hGCL.jpg"
+      "image_url": "https://images-na.ssl-images-amazon.com/images/I/A1Hqli+hGCL.jpg",
+      "favorite": true
     },
     {
       "id": 4,
