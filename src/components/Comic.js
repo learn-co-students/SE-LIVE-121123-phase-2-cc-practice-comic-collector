@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Comic({ id, image_url, issue, title, onDeleteComic }) {
+function Comic({ id, image_url, issue, title, onDeleteComic, onSelectComic }) {
   const [isShowCover, setIsShowCover] = useState(true);
 
   const toggleCover = () => setIsShowCover((isShowCover) => !isShowCover);
@@ -47,6 +47,7 @@ function Comic({ id, image_url, issue, title, onDeleteComic }) {
           <h3 onClick={toggleCover}>{title}</h3>
           <h4>{`Issue No. ${issue}`}</h4>
           <button onClick={handleDelete}>Remove</button>
+          <button onClick={() => onSelectComic(id)}>Edit</button>
         </>
       )}
     </div>

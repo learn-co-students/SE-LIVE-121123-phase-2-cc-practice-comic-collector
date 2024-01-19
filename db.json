@@ -3,8 +3,9 @@
     {
       "id": 1,
       "title": "The Incredible Hulk",
-      "issue": "1",
-      "image_url": "https://i.annihil.us/u/prod/marvel/i/mg/9/a0/59933ea5b5c2e/clean.jpg"
+      "issue": "3",
+      "image_url": "https://i.annihil.us/u/prod/marvel/i/mg/9/a0/59933ea5b5c2e/clean.jpg",
+      "description": "Don't get'em mad!"
     },
     {
       "id": 2,
@@ -27,8 +28,9 @@
     {
       "id": 5,
       "title": "Detective Comics",
-      "issue": "38",
-      "image_url": "https://d1466nnw0ex81e.cloudfront.net/n_iv/600/5401401.jpg"
+      "issue": "36",
+      "image_url": "https://d1466nnw0ex81e.cloudfront.net/n_iv/600/5401401.jpg",
+      "description": "eureka!"
     }
   ]
 }
